@@ -2,7 +2,7 @@
   <app-search (search)="handleSearch($event)"> </app-search>
 
   <div
-    class="col-md-4 p-4"
+    class="col-md-3 p-4"
     *ngFor="let trailer of trailers | search: Filtro_valor"
   >
     <div
@@ -15,7 +15,7 @@
       </div>
       <div class="card-body">
         <img
-          style="border-radius: 8px; width: 274px !important; height: 365px"
+          style="border-radius: 8px;   height: 239px"
           [src]="
             trailer.image == ''
               ? 'https://cdn.dribbble.com/users/1761902/screenshots/8527483/media/9e88b2c1b2f4404045326469fbcc5a8b.gif'

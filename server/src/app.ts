@@ -23,4 +23,5 @@ app.use(express.json());
 app.use('/api/trailer', trailerRoutes);
 app.use('/api/auth', authRoutes);
 
+
 export default app;

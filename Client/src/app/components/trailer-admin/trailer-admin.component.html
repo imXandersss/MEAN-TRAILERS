@@ -59,9 +59,10 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4 mx-auto">
-    <div class="card border-light mb-3 card-body">
-      <img [src]="trailer.image == '' ? '/assets/noimg.png' : trailer.image" class="card-img-top">
+
+  <div class=" col-md-4 mx-auto">
+    <div class="card text-white bg-dark mb-3 border-light  card-body">
+      <img [src]="trailer.image == '' ? 'https://cdn.dribbble.com/users/1761902/screenshots/8527483/media/9e88b2c1b2f4404045326469fbcc5a8b.gif' : trailer.image" class="card-img-top">
       <h3>{{trailer.name == '' ? '' : trailerService.selectedTrailer.name || trailer.name}}</h3>
       <p>{{trailer.category == '' ? '' : trailerService.selectedTrailer.category || trailer.category}}</p>
       <p>{{trailer.description == '' ? '': trailerService.selectedTrailer.description || trailer.description}}</p>
