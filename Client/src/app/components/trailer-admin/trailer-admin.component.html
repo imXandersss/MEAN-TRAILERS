@@ -1,0 +1,100 @@
+
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card border-primary mb-3">
+      <div class="card-header">
+        Add Trailer
+      </div>
+      <div class="card-body">
+        <form #trailerForm="ngForm" (submit)="createTrailer(trailerForm)"  action="/trailer/edit/{{trailer._id}}" method="POST">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="trailerService.selectedTrailer._id || trailer._id">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="trailerService.selectedTrailer.name || trailer.name" name="name" #name="ngModel" class="form-control" placeholder="Name" required autofocus>
+          </div>
+          <div class="form-group mt-3">
+            <textarea name="description" #name="ngModel" [(ngModel)]="trailerService.selectedTrailer.description || trailer.description" placeholder="Description" rows="3" class="form-control"></textarea>
+
+          </div>
+          <div class="form-group mt-3">
+            <!-- <input type="text" [(ngModel)]="trailerService.selectedTrailer.category || trailer.category" name="category" #name="ngModel" class="form-control" placeholder="Category" required > -->
+            <select id="trailer.category" name="trailer.category" [(ngModel)]="trailerService.selectedTrailer.category || trailer.category" class="form-control">
+              <option value="" disabled selected>Genero</option>
+              <option value="Magia" value="Magia">Magia</option>
+              <option value="Romance" value="Romance">Romance</option>
+              <option value="Comedia" value="Comedia">Comedia</option>
+              <option value="Misterio" value="Misterio">Misterio</option>
+              <option value="Ficcion" value="Ficcion">Ficcion</option>
+              </select>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" [(ngModel)]="trailerService.selectedTrailer.director || trailer.director" name="director" #name="ngModel" class="form-control" placeholder="director" required >
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" [(ngModel)]="trailerService.selectedTrailer.actors || trailer.actors" name="actors"  #name="ngModel" class="form-control" placeholder="actors" required >
+          </div>
+          <div class="form-group mt-3">
+            <input type="number" [(ngModel)]="trailerService.selectedTrailer.year || trailer.year" name="year" #name="ngModel"class="form-control" placeholder="Año" required  min="1980" max="2021" step="1" value="1980" />
+
+          </div>
+          <div class="form-group mt-3">
+            <input type="url" [(ngModel)]="trailerService.selectedTrailer.link || trailer.link" name="link" #name="ngModel"class="form-control" placeholder="link" required >
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" [(ngModel)]="trailerService.selectedTrailer.image || trailer.image" name="image" #name="ngModel" class="form-control" placeholder="image" required >
+          </div>
+
+          <div class="form-group mt-3">
+          <button type="submit" class="btn btn-primary mt-3 container "  routerLinkActive="router-link-active" >Guardar</button>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mx-auto">
+    <div class="card border-warning mb-3 card-body">
+      <img [src]="trailer.image == '' ? '/assets/noimg.png' : trailer.image" class="card-img-top">
+      <h3>{{trailer.name == '' ? 'Trailer Title': trailer.name}}</h3>
+      <p> Categoria: {{trailer.category}}</p>
+      <p>{{trailer.description == '' ? 'Una Reseña': trailer.description}}</p>
+      <p>{{trailer.director == '' ? 'Director': trailer.description}}</p>
+      <p>{{trailer.actors == '' ? 'Actores:': trailer.description}}</p>
+      <p>{{trailer.year == '' ? 'Año': trailer.description}}</p>
+      <p>{{trailer.link == '' ? 'Link del trailer': trailer.description}}</p>
+
+    </div>
+  </div>
+</div>
+
+
+!-- TABLE -->
+<div class="col-md-8 container">
+<table class="table table-striped">
+  <thead>
+    <th>Titulo</th>
+    <th>Director</th>
+    <th>Actores</th>
+    <th>Categoria</th>
+    <th>Año</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trailer of trailers" >
+      <td>{{trailer.name}}</td>
+      <td>{{trailer.director}}</td>
+      <td>{{trailer.actors}}</td>
+      <td>{{trailer.category}}</td>
+      <td>{{trailer.year}}</td>
+       <td>
+        <a class="btn btn-secondary btn-sm" (click)="editTrailer(trailer)">
+          <i class="material-icons">edit</i>
+        </a>
+        <a class="btn btn-danger btn-sm" (click)="deleteTrailer(trailer._id)" >
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

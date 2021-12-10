@@ -1,0 +1,7 @@
+.card-trailer {
+    cursor: pointer;
+}
+
+.card-trailer:hover {
+    border: solid 0.5px;
+}

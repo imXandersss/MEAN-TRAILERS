@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-4 p-4" *ngFor="let trailer of trailers">
+        <div class="card card-trailer" (click)="selectedTrailer(trailer._id)">
+
+            <div class="card-header">
+                Titulo: {{trailer.name}}
+            </div>
+            <div class="card-body">
+                <img [src]="trailer.image=='' ? '/assets/noimg.png' : trailer.image " class="card-img-top ">
+                <p class="card-text"> Categoria: {{trailer.category}}</p>
+                <p>Sipnosis: {{trailer.description}}</p>
+                <p>{{trailer.year}}</p>
+            </div>
+
+
+        </div>
+    </div>
+</div>

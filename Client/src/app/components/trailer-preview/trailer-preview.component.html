@@ -1,0 +1,13 @@
+<div class="row" *ngIf="!trailer; else mainconten">
+    <h1>
+        Loanding
+    </h1>
+</div>
+
+<ng-template #mainconten>
+    <div class="card-body card">
+        <iframe width="560" height="315" [src]="trailer.link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <input type="text" [value]="trailer.name">
+</ng-template>
