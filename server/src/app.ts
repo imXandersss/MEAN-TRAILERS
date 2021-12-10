@@ -1,7 +1,8 @@
 import express, {Application} from 'express';
+
 import morgan from 'morgan';
 import path from 'path';
-
+import cors from 'cors'
 
 const app: Application = express();
 
@@ -14,6 +15,7 @@ app.use('../uploads', express.static(path.resolve('uploads')))
 app.set('port', 3000);
 
 //middlewares
+app.use(cors())
 app.use(morgan('dev'));
 app.use(express.json());
 

@@ -1,13 +1,26 @@
-<div class="row" *ngIf="!trailer; else mainconten">
-    <h1>
-        Loanding
-    </h1>
+<div class="row">
+    <div class="col-md-4 p-4">
+        <div class=" card card-trailer ">
+
+            <div class="card-header ">
+                Titulo: {{trailer.name}}
+            </div>
+
+            <div class="card-body ">
+                <img [src]="trailer.image=='' ? '/assets/noimg.png' : trailer.image " style="width:500px !important; height:300px " class=" card-img-top ">
+                <p class="card-text "> Categoria: {{trailer.category}}</p>
+                <p>Sipnosis: {{trailer.description}}</p>
+                <p>{{trailer.year}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<ng-template #mainconten>
-    <div class="card-body card">
-        <iframe width="560" height="315" [src]="trailer.link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
 
-    <input type="text" [value]="trailer.name">
-</ng-template>
+
+
+
+
+<div class="card-body card ">
+    <iframe width="1200 " height="600 " [src]="getVideoIframe(trailer.link) " title="YouTube video player " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+</div>

@@ -5,3 +5,7 @@
 .card-trailer:hover {
     border: solid 0.5px;
 }
+
+.imagen {
+    width: 0.7rem;
+}
