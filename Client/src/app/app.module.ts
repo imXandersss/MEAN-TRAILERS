@@ -19,6 +19,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TrailerListComponent } from './components/trailer-list/trailer-list.component';
 import { TrailerPreviewComponent } from './components/trailer-preview/trailer-preview.component';
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { TrailerPreviewComponent } from './components/trailer-preview/trailer-pr
     SigninComponent,
     SignupComponent,
     TrailerListComponent,
-    TrailerPreviewComponent
+    TrailerPreviewComponent,
+    SearchComponent
   ],
   imports: [
     MatInputModule,

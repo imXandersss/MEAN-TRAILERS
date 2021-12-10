@@ -8,6 +8,13 @@ import{TrailerService}from '../../services/trailer.service'
   styleUrls: ['./trailer-list.component.css']
 })
 export class TrailerListComponent implements OnInit {
+  handleSearch(value: string) {
+
+    this.Filtro_valor = value;
+
+  }
+
+  Filtro_valor = '';
 
   trailers:any=[];
 
