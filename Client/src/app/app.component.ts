@@ -4,31 +4,20 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent {
-
   handleSearch(value: string) {
-    console.log(value)
-    this.Filtro_valor=value;
- }
+    console.log(value);
+    this.Filtro_valor = value;
+  }
 
-  Filtro_valor=' ';
+  Filtro_valor = ' ';
 
   constructor(public authService: AuthService) {}
 
   title = 'client';
-  courses: any =[];
+  courses: any = [];
 
-
-  ngOnInit(): void {
-    // this.authService.getCourse()
-    // .subscribe(
-    //   res => {
-    //     console.log(res)
-    //     this.courses = res;
-    //   },err => console.log(err)
-    // )
-  }
+  ngOnInit(): void {}
 }

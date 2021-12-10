@@ -1,21 +1,31 @@
 <div class="row">
-    <app-search (search)="handleSearch($event)">
-    </app-search>
+  <app-search (search)="handleSearch($event)"> </app-search>
 
-    <div class="col-md-4 p-4" *ngFor="let trailer of trailers | search: Filtro_valor">
-        <div class="card card-trailer" (click)="selectedTrailer(trailer._id)">
-
-            <div class="card-header">
-                Titulo: {{trailer.name}}
-            </div>
-            <div class="card-body">
-                <img [src]="trailer.image=='' ? '/assets/noimg.png' : trailer.image " class="card-img-top ">
-                <p class="card-text"> Categoria: {{trailer.category}}</p>
-                <p>Sipnosis: {{trailer.description}}</p>
-                <p>{{trailer.year}}</p>
-            </div>
-
-
-        </div>
+  <div
+    class="col-md-4 p-4"
+    *ngFor="let trailer of trailers | search: Filtro_valor"
+  >
+    <div
+      class="card card-trailer border-primary mb-3"
+      style="border-radius: 8px"
+      (click)="selectedTrailer(trailer._id)"
+    >
+      <div class="card-header">
+        <h3 class="text-primary">{{ trailer.name }}</h3>
+      </div>
+      <div class="card-body">
+        <img
+          style="border-radius: 8px; width: 274px !important; height: 365px"
+          [src]="
+            trailer.image == ''
+              ? 'https://cdn.dribbble.com/users/1761902/screenshots/8527483/media/9e88b2c1b2f4404045326469fbcc5a8b.gif'
+              : trailer.image
+          "
+          class="card-img-top img"
+        />
+        <h4 class="text-info">Género: {{ trailer.category }}</h4>
+        <span class="badge rounded-pill bg-primary">{{ trailer.year }}</span>
+      </div>
     </div>
+  </div>
 </div>

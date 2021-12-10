@@ -5,32 +5,27 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-
-  user={
+  user = {
     email: '',
-    password:'',
-    username: ''
-  }
+    password: '',
+    username: '',
+  };
 
-  constructor(private authService: AuthService,
-    private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
-  signUp(){
-    this.authService.singUp(this.user)
-      .subscribe(
-      res =>{
-        console.log(res);//token
+  signUp() {
+    this.authService.singUp(this.user).subscribe(
+      (res) => {
+        console.log(res); //token
         localStorage.setItem('token', res);
-        this.router.navigate(['/private']);
-        //TODO: Revisar a que ruta se supone que debe redireccionnar
+        this.router.navigate(['/trailer']);
       },
-      err => console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
-
 }

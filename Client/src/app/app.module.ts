@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -10,8 +10,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 //insertar signupcomponents
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { TrailerAdminComponent } from './components/trailer-admin/trailer-admin.component';
@@ -23,17 +23,6 @@ import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // SignupComponent,
-    // SigninComponent,
-    // ProfileComponent,
-    // CourseComponent,
-    // PrivateCourseComponent,
-    // PrivateListCourseComponent,
-    // TrailerComponent,
-    // ViewComponent,
-    // PreviewComponent,
-    // EditComponent,
-    // SearchComponent,
     FilterPipe,
     SearchPipe,
     TrailerAdminComponent,
@@ -41,7 +30,7 @@ import { SearchComponent } from './components/search/search.component';
     SignupComponent,
     TrailerListComponent,
     TrailerPreviewComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     MatInputModule,
@@ -51,12 +40,9 @@ import { SearchComponent } from './components/search/search.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [
-    AuthGuard,
-
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthGuard],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

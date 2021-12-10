@@ -1,6 +1,15 @@
 export class Trailer {
-  constructor(_id = "", name = "", director = "", actors = "", year = "", link = "", image = "", description = "", category = "") {
-
+  constructor(
+    _id = '',
+    name = '',
+    director = '',
+    actors = '',
+    year = '',
+    link = '',
+    image = '',
+    description = '',
+    category = ''
+  ) {
     this._id = _id;
     this.name = name;
     this.director = director;
@@ -24,13 +33,13 @@ export class Trailer {
 }
 
 export interface Trailer {
-  _id?: string,
-  name: string,
-  director:string;
-  actors:string;
-  year:string;
-  link:string;
-  image: string,
-  description: string,
-  category: string
+  _id?: string;
+  name: string;
+  director: string;
+  actors: string;
+  year: string;
+  link: string;
+  image: string;
+  description: string;
+  category: string;
 }
